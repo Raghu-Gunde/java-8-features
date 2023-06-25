@@ -52,6 +52,6 @@ public class Person {
         ", email='" + email + '\'' +
         ", gender='" + gender + '\'' +
         ", age=" + age +
-        '}'+"\n";
+        '}';
   }
 }
