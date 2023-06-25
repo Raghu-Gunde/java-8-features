@@ -11,13 +11,21 @@ public class Lecture3 {
 
   @Test
   public void min() throws Exception {
-    final List<Integer> numbers = ImmutableList.of(1, 2, 3, 100, 23, 93, 99);
+    final List<Integer> numbers = ImmutableList.of(20,1, 2, 3, 100, 23, 93, 99);
+    Integer min = numbers.stream()
+           // .min((num1, num2) -> num1 > num2 ? 1 : -1)
+            .min(Comparator.naturalOrder())
+            .get();
+    assertThat(min).isEqualTo(1);
 
   }
 
   @Test
   public void max() throws Exception {
     final List<Integer> numbers = ImmutableList.of(1, 2, 3, 100, 23, 93, 99);
-
+    Integer max = numbers.stream()
+            .max(Comparator.naturalOrder())
+            .get();
+    assertThat(max).isEqualTo(100);
   }
 }
