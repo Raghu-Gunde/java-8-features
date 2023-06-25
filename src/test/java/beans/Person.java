@@ -52,6 +52,10 @@ public class Person {
         ", email='" + email + '\'' +
         ", gender='" + gender + '\'' +
         ", age=" + age +
+<<<<<<< HEAD
         '}';
+=======
+        '}'+"\n";
+>>>>>>> fcd3435 (lecture-1)
   }
 }
