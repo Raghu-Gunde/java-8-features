@@ -20,17 +20,23 @@ public class Lecture10 {
   public void setUp() {
     System.out.println(arrayListOfNames);
   }
-
   @Test
   public void withoutFlatMap() throws Exception {
 //    [Mariam, Alex, Ismail, John, Alesha, Andre, Susy, Ali]
-
+      List<String> combinedList = new ArrayList<>();
+    arrayListOfNames.forEach(list -> {
+      combinedList.addAll(list);
+    });
+    System.out.println(combinedList);
   }
 
   @Test
   public void withFlatMap() throws Exception {
 //   [Mariam, Alex, Ismail, John, Alesha, Andre, Susy, Ali]
-
+    List<String> combinedList = arrayListOfNames.stream()
+            .flatMap(List::stream)
+            .collect(Collectors.toList());
+    System.out.println(combinedList);
   }
 
 }
